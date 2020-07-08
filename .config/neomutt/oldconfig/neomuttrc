@@ -1,0 +1,70 @@
+## Global Settings
+#
+
+set pager_index_lines=10
+set pager_context=3
+set pager_stop = yes
+set sort="reverse-date"
+set editor=vim
+auto_view text/html
+alternative_order text/plain text/html
+
+## Abook Settings
+#
+
+set query_command = "abook --mutt-query '%s'"
+macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor <Tab> complete-query
+
+## Folder Hook Settings
+#
+
+folder-hook "~/.mail/Gmail_0entropy0" "source ~/.config/neomutt/0entropy0@gmail.com"
+
+folder-hook "~/.mail/Gmail_dgteacher64" "source ~/.config/neomutt/dgteacher64@gmail.com"
+
+folder-hook "~/.mail/Gmail_dgalizia64" "source ~/.config/neomutt/dgalizia64@gmail.com"
+
+folder-hook "~/.mail/Gmail_domenicogalizia64" "source ~/.config/neomutt/domenicogalizia64@gmail.com"
+
+## Default Account
+## Default Account
+#
+
+source 0entropy0@gmail.com
+
+## Sidebar Settings
+#
+
+source sidebar.rc
+# Make the Sidebar visible by default
+set sidebar_visible
+# Use 'B' to switch the Sidebar on and off
+bind index,pager B sidebar-toggle-visible
+
+## Color Settings
+#
+
+source example2.neomuttrc
+
+## Shortchts Settings
+#
+
+macro index,pager <f4> '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/0entropy0@gmail.com<enter><change-folder>!<enter>'
+
+macro index,pager <f5> '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/dgteacher64@gmail.com<enter><change-folder>!<enter>'
+
+macro index,pager <f6> '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/dgalizia64@gmail.com<enter><change-folder>!<enter>'
+
+macro index,pager <f7> '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/domenicogalizia64@gmail.com<enter><change-folder>!<enter>'
+
+## vim-like keybindings
+bind index,pager k previous-entry
+bind index,pager j next-entry
+bind index,pager g noop
+bind index,pager \cu half-up
+bind index,pager \cd half-down
+bind pager gg top
+bind index gg first-entry
+bind pager G bottom
+bind index G last-entry

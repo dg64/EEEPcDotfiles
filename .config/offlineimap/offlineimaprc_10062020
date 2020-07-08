@@ -1,0 +1,79 @@
+[general]
+accounts = Gmail_0entropy0, Gmail_dgteacher64, Gmail_dgalizia64, Gmail_domenicogalizia64
+ui = ttyui
+fsync = true
+pythonfile = ~/.config/offlineimap/offlineimap-helpers.py
+
+[Account Gmail_0entropy0]
+localrepository = Gmail_0entropy0-Local
+remoterepository = Gmail_0entropy0-Remote
+#status_backend = sqlite
+
+[Account Gmail_dgteacher64]
+localrepository = Gmail_dgteacher64-Local
+remoterepository = Gmail_dgteacher64-Remote
+#status_backend = sqlite
+
+[Account Gmail_dgalizia64]
+localrepository = Gmail_dgalizia64-Local
+remoterepository = Gmail_dgalizia64-Remote
+#status_backend = sqlite
+
+[Account Gmail_domenicogalizia64]
+localrepository = Gmail_domenicogalizia64-Local
+remoterepository = Gmail_domenicogalizia64-Remote
+#status_backend = sqlite
+
+[Repository Gmail_0entropy0-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = 0entropy0
+remotepass = domenico64
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+auth_mechanisms = LOGIN
+## remove Gmail prefix on IMAP folders
+#nametrans = lambda f: f.replace('[Gmail]/', '') if f.startswith('[Gmail]/') else f
+#nametrans = oimaptransfolder_0entropy0
+
+[Repository Gmail_dgteacher64-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = dgteacher64
+remotepass = teroknor
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+auth_mechanisms = LOGIN
+
+[Repository Gmail_dgalizia64-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = dgalizia64
+remotepass = marina2009
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+auth_mechanisms = LOGIN
+
+[Repository Gmail_domenicogalizia64-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = domenicogalizia64
+remotepass = domenico64#
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+auth_mechanisms = LOGIN
+
+[Repository Gmail_0entropy0-Local]
+type = Maildir
+localfolders = ~/.mail/Gmail_0entropy0
+## Remove GMAIL prefix on Google-specific IMAP folders that are pulled down.
+#nametrans = lambda f: '[Gmail]/' + f if f in ['Drafts', 'Starred', 'Important', 'Spam', 'Trash', 'All Mail', 'Sent Mail'] else f
+
+[Repository Gmail_dgteacher64-Local]
+type = Maildir
+localfolders = ~/.mail/Gmail_dgteacher64
+
+[Repository Gmail_dgalizia64-Local]
+type = Maildir
+localfolders = ~/.mail/Gmail_dgalizia64
+
+[Repository Gmail_domenicogalizia64-Local]
+type = Maildir
+localfolders = ~/.mail/Gmail_domenicogalizia64
+

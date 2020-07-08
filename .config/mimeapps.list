@@ -1,0 +1,6 @@
+[Added Associations]
+image/jpeg=gpicview.desktop;
+application/zip=peazip.desktop;
+
+[Default Applications]
+image/jpeg=gpicview.desktop
